@@ -3,7 +3,7 @@
 Summary:	A quad-panel detailed-list file manager for linux
 Name:		4pane
 Version:	2.0
-Release:	2
+Release:	3
 License:	GPLv3+
 Group:		File tools
 Url:		http://www.4pane.co.uk
