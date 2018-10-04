@@ -1,14 +1,15 @@
+%global _disable_rebuild_configure 1
 %define oname 4Pane
 
 Summary:	A quad-panel detailed-list file manager for linux
 Name:		4pane
-Version:	2.0
-Release:	3
+Version:	5.0
+Release:	1
 License:	GPLv3+
 Group:		File tools
 Url:		http://www.4pane.co.uk
-Source0:	http://sourceforge.net/projects/fourpane/files/%{name}/%{name}-%{version}.tar.gz
-BuildRequires:	wxgtku2.8-devel
+Source0:	https://datapacket.dl.sourceforge.net/project/fourpane/%{version}/4pane-%{version}.tar.gz
+BuildRequires:	wxgtku3.0-devel
 BuildRequires:	pkgconfig(liblzma)
 
 %description
@@ -21,6 +22,8 @@ fully-featured without bloat.
 %{_bindir}/%{name}
 %{_datadir}/%{oname}/
 %{_datadir}/applications/%{name}.desktop
+%{_datadir}/appdata/4Pane.appdata.xml
+%{_datadir}/icons/hicolor/*/apps/4Pane.*
 %{_miconsdir}/%{name}.xpm
 %{_iconsdir}/%{name}.xpm
 %{_liconsdir}/%{name}.png
@@ -30,10 +33,12 @@ fully-featured without bloat.
 
 %prep
 %setup -q
+cd .build
+./autogen.sh
 
 %build
-%configure2_5x --disable-desktop
-%make CXX="g++ %{optflags}"
+%configure
+%make CXX="%{__cxx} %{optflags}"
 
 %install
 %makeinstall_std
@@ -61,4 +66,3 @@ install -D -m 644 bitmaps/%{oname}Icon32.xpm %{buildroot}%{_iconsdir}/%{name}.xp
 install -D -m 644 bitmaps/%{oname}Icon16.xpm %{buildroot}%{_miconsdir}/%{name}.xpm
 
 %find_lang %{oname}
-
