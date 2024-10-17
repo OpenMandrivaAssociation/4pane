@@ -7,7 +7,7 @@ Version:	5.0
 Release:	1
 License:	GPLv3+
 Group:		File tools
-Url:		http://www.4pane.co.uk
+Url:		https://www.4pane.co.uk
 Source0:	https://datapacket.dl.sourceforge.net/project/fourpane/%{version}/4pane-%{version}.tar.gz
 BuildRequires:	wxgtku3.0-devel
 BuildRequires:	pkgconfig(liblzma)
