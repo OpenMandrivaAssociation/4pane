@@ -9,6 +9,11 @@ License:	GPLv3+
 Group:		File tools
 Url:		https://www.4pane.co.uk
 Source0:	https://datapacket.dl.sourceforge.net/project/fourpane/%{version}/4pane-%{version}.tar.gz
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	wxgtku3.0-devel
 BuildRequires:	pkgconfig(liblzma)
 
